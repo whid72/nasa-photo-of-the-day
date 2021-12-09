@@ -10,15 +10,18 @@ const Main = () => {
     useEffect( () => {
         axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
         .then(res => {
-            console.log(res);
-        })
-        .then(res => {
-            setData(res.copyright)
+            console.log(res.data);
+            setData(res.data.url);
         })
     }, [])
 
     return (
-    <div className='main'>Hello World! Here's your data: {data}</div>
+    <div className='container'>
+        <div className='main'>
+           <img src={data} alt="APOD" /> 
+        </div>
+    </div>
+
     )
     
 };
