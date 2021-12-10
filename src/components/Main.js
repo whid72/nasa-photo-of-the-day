@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from "react";
 import axios from "axios";
+import "./Main.css"
 
 
 
@@ -21,7 +22,7 @@ const Main = () => {
             setExp(res.data.explanation);
             setTitle(res.data.title);
         })
-    }, [])
+    }, [url])
 
     return (
     <div className='container'>
